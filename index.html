@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafeMail AI — Phishing Email Detector</title>
+  <meta name="description"
+    content="SafeMail AI uses machine learning to detect phishing emails in real-time. Paste or upload your email to get an instant risk assessment with actionable safety recommendations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/globals.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+
+<body>
+  <!-- Animated background grid -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="SafeMail AI Home">
+        <div class="logo-icon">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M20 4L6 10V20C6 28.284 12.268 35.916 20 38C27.732 35.916 34 28.284 34 20V10L20 4Z"
+              fill="url(#shield-gradient)" />
+            <path d="M15 20l3 3 7-7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+            <defs>
+              <linearGradient id="shield-gradient" x1="6" y1="4" x2="34" y2="38" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00d4ff" />
+                <stop offset="1" stop-color="#7c3aed" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">SafeMail <span class="logo-ai">AI</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active" id="nav-home">Home</a>
+        <a href="dashboard.html" class="nav-link" id="nav-dashboard">Dashboard</a>
+        <a href="login.html" class="nav-link" id="nav-login">Sign In</a>
+      </div>
+      <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>AI-Powered Protection</span>
+        </div>
+        <h1 id="hero-heading" class="hero-title">
+          Detect Phishing.<br />
+          <span class="gradient-text">Stay Safe.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Paste or upload any email to get an instant AI-powered analysis.
+          Our ML model classifies threats with <strong>94%+ accuracy</strong> and explains exactly why.
+        </p>
+        <div class="hero-stats" aria-label="Platform statistics">
+          <div class="stat-chip">
+            <span class="stat-icon">🛡️</span>
+            <span><strong id="stat-total">18,650+</strong> emails analyzed</span>
+          </div>
+          <div class="stat-chip">
+            <span class="stat-icon">⚡</span>
+            <span><strong>&lt;2s</strong> response time</span>
+          </div>
+          <div class="stat-chip">
+            <span class="stat-icon">🎯</span>
+            <span><strong>94%+</strong> accuracy</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="shield-anim">
+          <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 10L20 45V105C20 153.437 54.338 198.58 100 212C145.662 198.58 180 153.437 180 105V45L100 10Z"
+              fill="url(#hero-shield)" opacity="0.15" />
+            <path d="M100 20L30 52V108C30 152.558 61.107 193.174 100 206C138.893 193.174 170 152.558 170 108V52L100 20Z"
+              stroke="url(#hero-shield-stroke)" stroke-width="2" />
+            <path d="M75 105l18 18 32-32" stroke="url(#check-gradient)" stroke-width="5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <defs>
+              <linearGradient id="hero-shield" x1="20" y1="10" x2="180" y2="212" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00d4ff" />
+                <stop offset="1" stop-color="#7c3aed" />
+              </linearGradient>
+              <linearGradient id="hero-shield-stroke" x1="30" y1="20" x2="170" y2="206" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00d4ff" />
+                <stop offset="1" stop-color="#7c3aed" />
+              </linearGradient>
+              <linearGradient id="check-gradient" x1="75" y1="105" x2="125" y2="123" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00d4ff" />
+                <stop offset="1" stop-color="#10b981" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="shield-ring ring-1"></div>
+          <div class="shield-ring ring-2"></div>
+          <div class="shield-ring ring-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scan Section -->
+    <section class="scan-section" aria-labelledby="scan-heading">
+      <div class="scan-card" id="scanCard">
+        <div class="scan-card-header">
+          <h2 id="scan-heading">Analyze Your Email</h2>
+          <p>Paste the email content below or upload a .txt / .eml file</p>
+        </div>
+
+        <!-- Tab toggle -->
+        <div class="input-tabs" role="tablist" aria-label="Input method">
+          <button id="tabPaste" class="tab-btn active" role="tab" aria-selected="true" aria-controls="pastePanel">
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path
+                d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" />
+            </svg>
+            Paste Email
+          </button>
+          <button id="tabUpload" class="tab-btn" role="tab" aria-selected="false" aria-controls="uploadPanel">
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z"
+                clip-rule="evenodd" />
+            </svg>
+            Upload File
+          </button>
+        </div>
+
+        <!-- Paste panel -->
+        <div id="pastePanel" role="tabpanel" aria-labelledby="tabPaste">
+          <div class="textarea-wrapper">
+            <textarea id="emailTextarea" class="email-textarea"
+              placeholder="Paste your email content here...&#10;&#10;Example:&#10;Subject: Urgent! Your account has been suspended&#10;From: security@paypa1-alert.com&#10;&#10;Dear Customer, your account has been suspended..."
+              rows="12" maxlength="50000" aria-label="Email content input"></textarea>
+            <div class="char-counter" id="charCounter">0 / 50,000</div>
+          </div>
+        </div>
+
+        <!-- Upload panel -->
+        <div id="uploadPanel" role="tabpanel" aria-labelledby="tabUpload" hidden>
+          <div class="upload-zone" id="uploadZone" role="button" tabindex="0"
+            aria-label="Upload email file (.txt or .eml)">
+            <div class="upload-icon">
+              <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M25 8L25 32M25 8L16 17M25 8L34 17" stroke="url(#upload-grad)" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8 38H42" stroke="url(#upload-grad)" stroke-width="3" stroke-linecap="round" />
+                <defs>
+                  <linearGradient id="upload-grad" x1="8" y1="8" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#00d4ff" />
+                    <stop offset="1" stop-color="#7c3aed" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <p class="upload-text">Drag & drop your email file here</p>
+            <p class="upload-sub">or click to browse — supports <strong>.txt</strong> and <strong>.eml</strong></p>
+            <input type="file" id="fileInput" accept=".txt,.eml" class="file-input" aria-label="Select email file" />
+          </div>
+          <div class="file-selected" id="fileSelected" hidden>
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path
+                d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" />
+            </svg>
+            <span id="fileName">No file selected</span>
+            <button id="clearFile" aria-label="Remove selected file">✕</button>
+          </div>
+        </div>
+
+        <!-- Error message -->
+        <div id="inputError" class="input-error" role="alert" hidden></div>
+
+        <!-- Scan button -->
+        <button id="scanBtn" class="scan-btn" aria-label="Scan email for phishing">
+          <span class="scan-btn-text">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            Scan Email
+          </span>
+          <span class="scan-btn-loading" hidden>
+            <span class="spinner"></span>
+            Analyzing...
+          </span>
+        </button>
+
+        <!-- Progress bar (shown while scanning) -->
+        <div class="scan-progress" id="scanProgress" hidden role="status" aria-label="Scan in progress">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <span id="progressLabel">Initializing ML model...</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-section" aria-labelledby="how-heading">
+      <h2 id="how-heading" class="section-title">How SafeMail AI Works</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-icon">📧</div>
+          <h3>Input Email</h3>
+          <p>Paste your email content or upload a .txt/.eml file directly into the analyzer.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-icon">🤖</div>
+          <h3>AI Analysis</h3>
+          <p>Our Naive Bayes ML model processes the text using TF-IDF vectorization for high-accuracy classification.
+          </p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-icon">📊</div>
+          <h3>Risk Assessment</h3>
+          <p>Get a confidence score and detailed breakdown of detected threats — urgency tactics, fake links, and more.
+          </p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <div class="step-icon">🛡️</div>
+          <h3>Stay Protected</h3>
+          <p>Receive tailored action recommendations to protect yourself from phishing and cybercrime.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Result Modal -->
+  <div id="resultModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="resultTitle" hidden>
+    <div class="modal-container">
+      <button class="modal-close" id="closeModal" aria-label="Close result">&times;</button>
+
+      <!-- Status Banner -->
+      <div class="result-banner" id="resultBanner">
+        <div class="result-icon" id="resultIcon" aria-hidden="true"></div>
+        <div class="result-info">
+          <h2 id="resultTitle" class="result-label">Analyzing...</h2>
+          <p class="result-sublabel" id="resultSublabel"></p>
+        </div>
+      </div>
+
+      <!-- Confidence Gauge -->
+      <div class="confidence-section">
+        <h3>Confidence Score</h3>
+        <div class="gauge-wrapper" role="meter" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+          aria-label="Phishing probability">
+          <svg class="gauge-svg" viewBox="0 0 200 110">
+            <path d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="#1e293b" stroke-width="16"
+              stroke-linecap="round" />
+            <path id="gaugeFill" d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="#00d4ff" stroke-width="16"
+              stroke-linecap="round" stroke-dasharray="251.2" stroke-dashoffset="251.2" />
+            <text id="gaugeText" x="100" y="95" text-anchor="middle" class="gauge-value">0%</text>
+            <text x="100" y="110" text-anchor="middle" class="gauge-label">Risk Score</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Detected Issues -->
+      <div class="result-section" id="reasonsSection">
+        <h3>
+          <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+              clip-rule="evenodd" />
+          </svg>
+          Detected Issues
+        </h3>
+        <ul id="reasonsList" class="issues-list" aria-label="Detected email threats"></ul>
+        <p id="noIssues" class="no-issues" hidden>✅ No specific threat patterns detected</p>
+      </div>
+
+      <!-- Recommendations -->
+      <div class="result-section">
+        <h3>
+          <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+              clip-rule="evenodd" />
+          </svg>
+          Recommended Actions
+        </h3>
+        <div id="suggestionsList" class="suggestions-grid" aria-label="Safety recommendations"></div>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="result-actions">
+        <button class="btn-secondary" id="scanAnotherBtn">
+          <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z"
+              clip-rule="evenodd" />
+          </svg>
+          Scan Another
+        </button>
+        <a href="dashboard.html" class="btn-primary">
+          <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path
+              d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+          </svg>
+          View Dashboard
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p>© 2026 SafeMail AI — Built for cybersecurity awareness</p>
+      <p class="footer-disclaimer">⚠️ Results are AI-generated and should not replace professional security auditing.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/home.js"></script>
+</body>
+
+</html>

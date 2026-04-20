@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SafeMail AI - Extension</title>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <svg viewBox="0 0 40 40" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 4L6 10V20C6 28.284 12.268 35.916 20 38C27.732 35.916 34 28.284 34 20V10L20 4Z" fill="url(#shield-gradient)"/>
+        <path d="M15 20l3 3 7-7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs>
+          <linearGradient id="shield-gradient" x1="6" y1="4" x2="34" y2="38" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#00d4ff"/><stop offset="1" stop-color="#7c3aed"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      SafeMail AI
+    </div>
+  </div>
+
+  <div class="content">
+    <p class="description">Open an email in Gmail, then click scan to analyze it for threats.</p>
+    
+    <button id="scanBtn" class="btn-primary">
+      <span class="btn-text">Scan Active Email</span>
+      <span class="btn-loader" hidden>Scanning...</span>
+    </button>
+    
+    <div id="errorBox" class="error-box" hidden></div>
+    
+    <div id="resultBox" class="result-box" hidden>
+      <div id="resultBanner" class="result-banner">
+        <span id="resultIcon"></span>
+        <strong id="resultLabel"></strong>
+      </div>
+      <div class="score-container">
+        <div class="score-bar">
+          <div id="scoreFill" class="score-fill"></div>
+        </div>
+        <div class="score-text"><span id="scoreValue">0</span>% Phishing Probability</div>
+      </div>
+      
+      <div id="reasonsBox" class="reasons-box">
+        <strong>Detected Issues:</strong>
+        <ul id="reasonsList"></ul>
+      </div>
+      
+      <a href="http://localhost:5000/dashboard.html" target="_blank" class="dashboard-link">View in Dashboard ↗</a>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

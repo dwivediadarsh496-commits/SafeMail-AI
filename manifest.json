@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "SafeMail AI",
+  "version": "1.0.0",
+  "description": "Scan Gmail emails for phishing and malicious content using SafeMail AI.",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*"
+  ]
+}

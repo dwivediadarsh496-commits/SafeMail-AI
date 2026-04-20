@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In — SafeMail AI</title>
+  <meta name="description" content="Sign in or create a SafeMail AI account to save your scan history and access personalized phishing detection insights." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/globals.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="SafeMail AI Home">
+        <div class="logo-icon">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M20 4L6 10V20C6 28.284 12.268 35.916 20 38C27.732 35.916 34 28.284 34 20V10L20 4Z" fill="url(#shield-gradient)" />
+            <path d="M15 20l3 3 7-7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="shield-gradient" x1="6" y1="4" x2="34" y2="38" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00d4ff"/><stop offset="1" stop-color="#7c3aed"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">SafeMail <span class="logo-ai">AI</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="login.html" class="nav-link active">Sign In</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content" class="login-main">
+    <div class="login-split">
+      <!-- Left branding panel -->
+      <div class="login-brand" aria-hidden="true">
+        <div class="brand-inner">
+          <div class="brand-shield">
+            <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M100 10L20 45V105C20 153.437 54.338 198.58 100 212C145.662 198.58 180 153.437 180 105V45L100 10Z" fill="url(#brand-shield)" opacity="0.2"/>
+              <path d="M100 20L30 52V108C30 152.558 61.107 193.174 100 206C138.893 193.174 170 152.558 170 108V52L100 20Z" stroke="url(#brand-stroke)" stroke-width="2"/>
+              <path d="M75 105l18 18 32-32" stroke="url(#brand-check)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+                <linearGradient id="brand-shield" x1="20" y1="10" x2="180" y2="212" gradientUnits="userSpaceOnUse"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+                <linearGradient id="brand-stroke" x1="30" y1="20" x2="170" y2="206" gradientUnits="userSpaceOnUse"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+                <linearGradient id="brand-check" x1="75" y1="105" x2="125" y2="123" gradientUnits="userSpaceOnUse"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#10b981"/></linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <h2 class="brand-title">Your personal<br /><span class="gradient-text">cyber shield</span></h2>
+          <p class="brand-desc">Sign in to save your scan history, track threats over time, and get personalized phishing alerts.</p>
+          <ul class="brand-features">
+            <li><span class="feat-check">✓</span> Unlimited email scans</li>
+            <li><span class="feat-check">✓</span> Persistent scan history</li>
+            <li><span class="feat-check">✓</span> AI-powered explanations</li>
+            <li><span class="feat-check">✓</span> Real-time threat detection</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right form panel -->
+      <div class="login-form-wrap">
+        <div class="login-card">
+          <!-- Tab toggle -->
+          <div class="auth-tabs" role="tablist" aria-label="Authentication mode">
+            <button class="auth-tab active" id="tabSignIn" role="tab" aria-selected="true" aria-controls="signInForm">Sign In</button>
+            <button class="auth-tab" id="tabRegister" role="tab" aria-selected="false" aria-controls="registerForm">Create Account</button>
+          </div>
+
+          <!-- Sign In Form -->
+          <form id="signInForm" role="tabpanel" aria-labelledby="tabSignIn" novalidate>
+            <h1 class="form-title">Welcome back</h1>
+            <p class="form-subtitle">Sign in to your SafeMail AI account</p>
+
+            <div class="form-group">
+              <label for="signInEmail" class="form-label">Email address</label>
+              <div class="input-wrap">
+                <svg class="input-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                <input type="email" id="signInEmail" class="form-input" placeholder="you@example.com" autocomplete="email" required aria-required="true" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="signInPassword" class="form-label">
+                Password
+                <a href="#" class="forgot-link" tabindex="-1">Forgot password?</a>
+              </label>
+              <div class="input-wrap">
+                <svg class="input-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+                <input type="password" id="signInPassword" class="form-input" placeholder="••••••••" autocomplete="current-password" required aria-required="true" />
+                <button type="button" class="password-toggle" id="toggleSignInPw" aria-label="Toggle password visibility">👁</button>
+              </div>
+            </div>
+
+            <div id="signInError" class="form-error" role="alert" hidden></div>
+
+            <button type="submit" class="form-submit" id="signInBtn">
+              <span class="submit-text">Sign In</span>
+              <span class="submit-loading" hidden><span class="spinner"></span> Signing in...</span>
+            </button>
+
+            <div class="form-divider"><span>or continue without account</span></div>
+            <a href="index.html" class="btn-secondary" style="width:100%;justify-content:center;">
+              Continue as Guest
+            </a>
+          </form>
+
+          <!-- Register Form -->
+          <form id="registerForm" role="tabpanel" aria-labelledby="tabRegister" hidden novalidate>
+            <h1 class="form-title">Create account</h1>
+            <p class="form-subtitle">Start protecting your inbox with AI</p>
+
+            <div class="form-group">
+              <label for="regName" class="form-label">Full name</label>
+              <div class="input-wrap">
+                <svg class="input-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+                <input type="text" id="regName" class="form-input" placeholder="Your name" autocomplete="name" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="regEmail" class="form-label">Email address</label>
+              <div class="input-wrap">
+                <svg class="input-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                <input type="email" id="regEmail" class="form-input" placeholder="you@example.com" autocomplete="email" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="regPassword" class="form-label">Password</label>
+              <div class="input-wrap">
+                <svg class="input-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+                <input type="password" id="regPassword" class="form-input" placeholder="Min. 8 characters" autocomplete="new-password" required />
+                <button type="button" class="password-toggle" id="toggleRegPw" aria-label="Toggle password visibility">👁</button>
+              </div>
+              <div class="password-strength" id="pwStrength" aria-live="polite"></div>
+            </div>
+
+            <div id="regError" class="form-error" role="alert" hidden></div>
+            <div id="regSuccess" class="form-success" role="status" hidden></div>
+
+            <button type="submit" class="form-submit" id="regBtn">
+              <span class="submit-text">Create Account</span>
+              <span class="submit-loading" hidden><span class="spinner"></span> Creating...</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/login.js"></script>
+</body>
+</html>
